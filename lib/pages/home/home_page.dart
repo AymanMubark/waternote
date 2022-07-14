@@ -16,8 +16,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  UsersGetResponse? model;
   List<User>? users;
+  UsersGetResponse? model;
+  bool isLoadingMore = false;
 
   @override
   void initState() {
@@ -34,8 +35,6 @@ class _HomePageState extends State<HomePage> {
     }
     setState(() {});
   }
-
-  bool isLoadingMore = false;
 
   getMoreUsers() async {
     if (model!.page! < model!.totalPages!) {
@@ -84,9 +83,7 @@ class _HomePageState extends State<HomePage> {
                               onPressed: () {
                                 getMoreUsers();
                               },
-                              child: const Text(
-                                "عرض المزيد",
-                              ),
+                              child: const Text("عرض المزيد"),
                             )
                           : const MyCircularProgressIndicator(),
                     ],
