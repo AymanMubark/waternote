@@ -1,12 +1,10 @@
 import 'package:waternote/pages/home/components/home_app_bar.dart';
-
 import '../../widgets/my_circular_progress_indicator.dart';
 import '../../models/users_get_response.dart';
 import 'package:flutter/material.dart';
 import '../../apis/user_apis.dart';
-import '../../models/user.dart';
-
 import 'components/user_card.dart';
+import '../../models/user.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
